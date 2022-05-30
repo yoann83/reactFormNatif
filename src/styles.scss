@@ -1,0 +1,22 @@
+$blue_egerie: #274058;
+$orange_egerie: #e94e1b;
+$white_egerie: #fff;
+$success_egerie: #198754;
+$error_egerie: #FFBABB;
+#container{
+  section{
+    margin: 2.5em 3.5em;
+    padding: 1em 2em;
+    border-radius: 0.3em;
+    box-shadow: 0px 0px 5px $blue_egerie;
+    min-height: 280px;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1em 5vw;
+    transition: 0.4s ease-in-out;
+    &:hover{
+      transform: scale(1.15);
+    }
+  }
+
+}

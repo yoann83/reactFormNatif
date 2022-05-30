@@ -1,0 +1,29 @@
+// Colors
+$blue_egerie: #274058;
+$orange_egerie: #e94e1b;
+$white_egerie: #fff;
+$success_egerie: #198754;
+$error_egerie: #FFBABB;
+section{
+  h1{
+    border-radius: 0.2em;
+  }
+  ul{
+    text-align: left;
+    li{
+      list-style: none;
+    }
+  }
+  .bg_orange_egerie {
+    padding: 0.2em;
+    background-color: $orange_egerie;
+  }
+  .bg_blue_egerie {
+    padding: 0.2em;
+    background-color: $blue_egerie;
+  }
+  .bg_success {
+    padding: 0.2em;
+    background-color: $success_egerie;
+  }
+}
