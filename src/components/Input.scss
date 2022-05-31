@@ -1,4 +1,22 @@
-.error{
-  border-color: red;
-  color: red;
+.box_input{
+  box-shadow: 1px 1px 5px grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em 0;
+  padding: 1em;
+  input{
+    border-radius: 0.8em;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+  .error{
+    color: red;
+  }
+  p{
+    border-bottom: 1px solid grey;
+    margin-top: 0;
+    font-size: 0.7em;
+  }
 }

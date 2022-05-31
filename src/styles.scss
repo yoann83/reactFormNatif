@@ -15,6 +15,7 @@ $error_egerie: #FFBABB;
     padding: 1em 5vw;
     transition: 0.4s ease-in-out;
     &:hover{
+      background-color: white;
       transform: scale(1.15);
     }
   }

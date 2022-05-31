@@ -6,50 +6,133 @@ export default function ListInputs() {
   const [datas, setDatas] = useState([]);
 
   //ATTRIBUTES
-  const title = "Fields";
 
   //INITIALIZE FUNCTION
   useEffect(() => {
     setDatas([
       {
-        id: "1",
+        type: "",
+        label: "IDENTITY",
+        name: "",
+        option: {
+          labelStyle: {
+            fontSize: "1.5em",
+            fontWeight: "bold",
+            textAlign: "center",
+            display: "block",
+            padding: "1em 0"
+          },
+          inputStyle: {
+            display: "none"
+          }
+        }
+      },
+      {
         type: "text",
-        label: "Name",
+        label: "Last Name",
         name: "last_name",
         dataPlaceholder: "BOND",
         value: "Nom",
         option: {
+          class: "box_input",
           required: true,
-          minLength: "1"
+          minLength: "2",
+          maxLength: "15"
         }
       },
       {
-        id: "2",
         type: "text",
         label: "First Name",
         name: "first_name",
         dataPlaceholder: "James",
         value: "Prénom",
         option: {
-          minLength: "1"
+          class: "box_input"
         }
       },
       {
-        id: "3",
-        type: "radio",
-        label: "-18ans",
-
-        name: "age",
-        value: "oui",
-        option: {}
+        type: "email",
+        label: "Email",
+        name: "email",
+        dataPlaceholder: "bond.james@mail.com",
+        value: "Nom",
+        option: {
+          class: "box_input",
+          required: true,
+          minLength: "2"
+        }
       },
       {
-        id: "4",
+        type: "text",
+        label: "AGE",
+        name: "age",
+        option: {
+          labelStyle: {
+            fontSize: "1.5em",
+            fontWeight: "bold",
+            textAlign: "center",
+            display: "block",
+            padding: "1em 0"
+          },
+          inputStyle: {
+            display: "none"
+          }
+        }
+      },
+      {
+        type: "radio",
+        label: "-18ans",
+        name: "age",
+        value: "16",
+        option: {
+          class: "box_input"
+        }
+      },
+      {
         type: "radio",
         label: "+18ans",
         name: "age",
-        value: "non",
-        option: {}
+        value: "19",
+        option: {
+          class: "box_input"
+        }
+      },
+      {
+        type: "",
+        label: "SECURITY",
+        name: "",
+        option: {
+          labelStyle: {
+            fontSize: "1.5em",
+            fontWeight: "bold",
+            textAlign: "center",
+            display: "block",
+            padding: "1em 0"
+          },
+          inputStyle: {
+            display: "none"
+          }
+        }
+      },
+      {
+        type: "password",
+        label: "Password",
+        name: "password",
+        option: {
+          class: "box_input",
+          required: true,
+          autoComplete: "off"
+        }
+      },
+      {
+        type: "password",
+        label: "Confim Password",
+        name: "confimPassword",
+        option: {
+          class: "box_input",
+          required: true,
+          autoComplete: "off"
+        }
       }
     ]);
   }, []);
@@ -59,13 +142,11 @@ export default function ListInputs() {
   //RENDER COMPONENT IN ID "list_books"
   return (
     <section>
-      <h1>{title.toLocaleUpperCase()}</h1>
       <div>
         <ul>
           {datas.map((data, key) => (
             <Input
               key={key}
-              dataId={data.id}
               dataLabel={data.label}
               dataType={data.type}
               dataName={data.name}
@@ -74,16 +155,6 @@ export default function ListInputs() {
               dataValue={data.value}
             />
           ))}
-          <Input
-            key="10"
-            dataId="10"
-            dataLabel="PassWord"
-            dataType="PassWord"
-            dataName="PassWord"
-            dataPlaceholder="Enter your PassWord"
-            dataOption=""
-            dataValue=""
-          />
         </ul>
       </div>
     </section>
