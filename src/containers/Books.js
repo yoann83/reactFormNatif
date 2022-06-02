@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Book from "../components/Book";
 
-export default function ListBooks() {
+export default function Books() {
   //STATES
   const [loader, isLoader] = useState(true);
   const [books, setBooks] = useState([]);

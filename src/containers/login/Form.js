@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Input from "../components/Input";
+import Input from "../../components/Input";
+import Consent from "./Consent";
+import "../../styles.scss";
 
-export default function ListInputs() {
+export default function Form() {
   //STATES
   const [datas, setDatas] = useState([]);
 
@@ -20,7 +22,7 @@ export default function ListInputs() {
             fontWeight: "bold",
             textAlign: "center",
             display: "block",
-            padding: "1em 0"
+            padding: "1em 0 0 0"
           },
           inputStyle: {
             display: "none"
@@ -72,7 +74,7 @@ export default function ListInputs() {
             fontWeight: "bold",
             textAlign: "center",
             display: "block",
-            padding: "1em 0"
+            padding: "1em 0 0 0"
           },
           inputStyle: {
             display: "none"
@@ -85,7 +87,9 @@ export default function ListInputs() {
         name: "age",
         value: "16",
         option: {
-          class: "box_input"
+          checkedRadio: "checked",
+          idRadio: "not_has_18",
+          class: "box_radio"
         }
       },
       {
@@ -94,7 +98,8 @@ export default function ListInputs() {
         name: "age",
         value: "19",
         option: {
-          class: "box_input"
+          idRadio: "has_18",
+          class: "box_radio"
         }
       },
       {
@@ -107,7 +112,7 @@ export default function ListInputs() {
             fontWeight: "bold",
             textAlign: "center",
             display: "block",
-            padding: "1em 0"
+            padding: "1em 0 0 0"
           },
           inputStyle: {
             display: "none"
@@ -125,13 +130,12 @@ export default function ListInputs() {
         }
       },
       {
-        type: "password",
-        label: "Confim Password",
-        name: "confimPassword",
+        type: "button",
+        name: "submit",
+        label: "submit",
+        value: "Add to favorites",
         option: {
-          class: "box_input",
-          required: true,
-          autoComplete: "off"
+          class: "box_submit"
         }
       }
     ]);
@@ -141,22 +145,25 @@ export default function ListInputs() {
 
   //RENDER COMPONENT IN ID "list_books"
   return (
-    <section>
-      <div>
-        <ul>
-          {datas.map((data, key) => (
-            <Input
-              key={key}
-              dataLabel={data.label}
-              dataType={data.type}
-              dataName={data.name}
-              dataPlaceholder={data.dataPlaceholder}
-              dataOption={data.option}
-              dataValue={data.value}
-            />
-          ))}
-        </ul>
-      </div>
-    </section>
+    <div>
+      <section>
+        <form>
+          <ul>
+            {datas.map((data, key) => (
+              <Input
+                key={key}
+                dataLabel={data.label}
+                dataType={data.type}
+                dataName={data.name}
+                dataPlaceholder={data.dataPlaceholder}
+                dataOption={data.option}
+                dataValue={data.value}
+              />
+            ))}
+          </ul>
+          <Consent />
+        </form>
+      </section>
+    </div>
   );
 }

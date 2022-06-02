@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./Input.scss";
+import "./Button.scss";
 
 const Input = ({
   dataLabel,
@@ -15,6 +16,7 @@ const Input = ({
   const [regex, setRegex] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [styleError, setStyleError] = useState("");
+  const [styleShow, setStyleShow] = useState(dataOption.class);
 
   //ATTRIBUTES
   const regexPwd =
@@ -25,7 +27,7 @@ const Input = ({
   //EVENTS
   const testEmailRegex = (valueEmail) => {
     if (valueEmail.match(regexEmail)) {
-      setErrorMessage("");
+      setErrorMessage([]);
       setStyleError("");
     } else {
       setErrorMessage("Invalid Email");
@@ -35,12 +37,13 @@ const Input = ({
 
   const testPwdRegex = (valuePassword) => {
     if (valuePassword.match(regexPwd)) {
-      setErrorMessage("");
+      setErrorMessage([]);
       setStyleError("");
     } else {
-      setErrorMessage(
+      setStyleShow("styleHidden");
+      setErrorMessage([
         "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
-      );
+      ]);
       setStyleError("error");
     }
   };
@@ -48,27 +51,35 @@ const Input = ({
   const testError = () => {
     if (value.length === 0 && dataOption.required) {
       setErrorMessage("Required");
+      setStyleShow("styleHidden");
       setStyleError("error");
-    } else if (value.length < dataOption.minLength) {
+    }
+    if (value.length < dataOption.minLength) {
       setErrorMessage("Minimum : " + dataOption.minLength + " characters");
       setStyleError("error");
-    } else if (value.length > dataOption.maxLength) {
+      setStyleShow("styleHidden");
+    }
+    if (value.length > dataOption.maxLength) {
       setErrorMessage("Maximum : " + dataOption.maxLength + " characters");
       setStyleError("error");
-    } else if (dataType === "password") {
+      setStyleShow("styleHidden");
+    }
+    if (dataType === "password") {
       setRegex(regexPwd);
       testPwdRegex(value);
-    } else if (dataType === "email") {
+      setStyleShow("styleHidden");
+    }
+    if (dataType === "email") {
       setRegex(regexEmail);
       testEmailRegex(value);
-    } else {
-      setErrorMessage("");
-      setStyleError("");
+      setStyleShow("styleHidden");
     }
   };
 
   //INITIALIZE FUNCTION
   useEffect(() => {
+    setErrorMessage("");
+    setStyleError("");
     testError();
   }, [value]);
 
@@ -77,15 +88,22 @@ const Input = ({
   };
 
   return (
-    <div className={dataOption.class}>
-      <label style={dataOption.labelStyle}>{dataLabel}</label>
+    <div className={dataType === "button" ? styleShow : dataOption.class}>
+      <label
+        htmlFor={dataType === "radio" ? dataOption.idRadio : dataName}
+        style={dataOption.labelStyle}
+      >
+        {dataLabel}
+      </label>
       <input
         type={dataType}
         name={dataName}
+        id={dataType === "radio" ? dataOption.idRadio : dataName}
         pattern={regex}
         placeholder={dataPlaceholder}
         autoComplete={dataOption.autoComplete}
         onChange={handleChange}
+        checked={dataType === "radio" ? dataOption.checkedRadio : ""}
         required={dataOption.required}
         className={styleError}
         style={dataOption.inputStyle}

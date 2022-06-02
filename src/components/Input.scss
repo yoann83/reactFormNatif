@@ -1,4 +1,9 @@
+$blue_egerie: #274058;
+$orange_egerie: #e94e1b;
 .box_input{
+  label{
+    cursor: pointer;
+  }
   box-shadow: 1px 1px 5px grey;
   display: flex;
   flex-direction: column;
@@ -6,17 +11,46 @@
   justify-content: center;
   margin: 0.5em 0;
   padding: 1em;
-  input{
-    border-radius: 0.8em;
+}
+.box_radio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  margin: 1em auto;
+  label{
+    border: 1px solid #274058;
+    border-radius: 0.6em;
     padding: 0.5em;
-    margin: 0.5em;
+
+    cursor: pointer;
+    border-radius: 0.6em;
+    transition: all ease-in-out 0.1s;
+    cursor: pointer;
+    &:hover{
+      background-color: $orange_egerie;
+    }
+    &:active{
+      transform: scale(0.9);
+      &::after{
+        background-color: $orange_egerie;
+      }
+    }
   }
-  .error{
-    color: red;
-  }
-  p{
-    border-bottom: 1px solid grey;
-    margin-top: 0;
-    font-size: 0.7em;
-  }
+}
+input{
+  cursor: pointer;
+  border-radius: 0.8em;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+.error{
+  color: red;
+}
+p{
+  display: flex;
+  align-items: center;
+  min-height: 2.5em;
+  margin: 0;
+  font-size: 0.7em;
 }

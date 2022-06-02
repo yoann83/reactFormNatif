@@ -2,10 +2,14 @@
 $label-color: #274058;
 $disabled-color: #ddd;
 $toggle-color: #e94e1b;
-section{
+#consent{
+  margin: 4em 0 0 0;
   div {
     text-align: left;
-    margin: 0.2em 0;
+    margin-top: 0.2em;
+    label{
+      cursor: pointer;
+    }
   }
 }
 .toggle-switch {

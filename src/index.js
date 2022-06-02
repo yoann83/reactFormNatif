@@ -1,15 +1,13 @@
-import ListBooks from "./containers/ListBooks";
-import SelectToggle from "./containers/SelectToggle";
-import ListInputs from "./containers/ListInputs";
+import Books from "./containers/Books";
+import Form from "./containers/login/Form";
 import ReactDOM from "react-dom";
 import "./styles.scss";
 
 const Index = () => {
   return (
     <div>
-      <ListBooks />
-      <SelectToggle />
-      <ListInputs />
+      <Books />
+      <Form />
     </div>
   );
 };

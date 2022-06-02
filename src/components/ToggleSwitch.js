@@ -10,13 +10,16 @@ const ToggleSwitch = ({
   small,
   disabled
 }) => {
-  function handleKeyPress(e) {
+  const handleKeyPress = (event) => {
     //espace keyCode 32
-    if (e.keyCode !== 32) return;
-
-    e.preventDefault();
+    if (event.keyCode !== 32) return;
+    event.preventDefault();
     onChange(!checked);
-  }
+  };
+
+  const handleChange = (event) => {
+    onChange(event.target.checked);
+  };
 
   return (
     <div className={"toggle-switch" + (small ? " small-switch" : "")}>
@@ -26,14 +29,14 @@ const ToggleSwitch = ({
         className="toggle-switch-checkbox"
         id={id}
         checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
+        onChange={handleChange}
         disabled={disabled}
       />
       {id ? (
         <label
           className="toggle-switch-label"
           tabIndex={disabled ? -1 : 1}
-          onKeyDown={(e) => handleKeyPress(e)}
+          onKeyDown={handleKeyPress}
           htmlFor={id}
         >
           <span
