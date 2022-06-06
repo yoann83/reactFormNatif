@@ -14,6 +14,7 @@ const InputComponent = ({
 }) => {
   //STATES
   const [value, setValue] = useState(dataValue ? dataValue : "");
+  const [show, isShow] = useState(false);
   const [regex, setRegex] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [styleError, setStyleError] = useState("");
@@ -42,11 +43,13 @@ const InputComponent = ({
     if (valuePassword.match(regexPwd)) {
       setErrorMessage("");
       setStyleError("");
+      isShow(true);
     } else {
       setErrorMessage(
         "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
       );
       setStyleError("error");
+      isShow(false);
     }
   };
 
@@ -67,17 +70,14 @@ const InputComponent = ({
       setRegex(regexEmail);
       testEmailRegex(value);
     } else {
+      setErrorMessage("");
       setStyleError("");
     }
   };
 
-  //INITIALIZE FUNCTION
-  useEffect(() => {
-    testError();
-  }, [value]);
-
   const handleChange = (event) => {
     setValue(event.target.value);
+    testError();
   };
 
   return (
@@ -87,6 +87,7 @@ const InputComponent = ({
         style={dataOption.labelStyle}
       >
         {dataLabel}
+        {dataOption.required ? "*" : ""}
       </label>
       <input
         type={dataType}
@@ -102,9 +103,13 @@ const InputComponent = ({
         style={dataOption.inputStyle}
       />
       <p className={styleError}> {errorMessage} </p>
-      <div>
-        {dataType === "button" ? <Button errorMessage={errorMessage} /> : ""}
-      </div>
+      {show ? (
+        <div>
+          <Button />
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

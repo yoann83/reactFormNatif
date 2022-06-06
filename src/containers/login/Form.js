@@ -18,7 +18,7 @@ export default function Form() {
         name: "",
         option: {
           labelStyle: {
-            fontSize: "1.5em",
+            fontSize: "1.2em",
             fontWeight: "bold",
             textAlign: "center",
             display: "block",
@@ -33,7 +33,7 @@ export default function Form() {
         type: "text",
         label: "Last Name",
         name: "last_name",
-        value: "",
+        value: "-",
         dataPlaceholder: "BOND",
         option: {
           class: "box_input",
@@ -46,7 +46,6 @@ export default function Form() {
         type: "text",
         label: "First Name",
         name: "first_name",
-        value: "",
         dataPlaceholder: "James",
         option: {
           class: "box_input"
@@ -56,7 +55,7 @@ export default function Form() {
         type: "email",
         label: "Email",
         name: "email",
-        value: "",
+        value: "My Email",
         dataPlaceholder: "bond.james@mail.com",
         option: {
           class: "box_input",
@@ -69,7 +68,7 @@ export default function Form() {
         name: "age",
         option: {
           labelStyle: {
-            fontSize: "1.5em",
+            fontSize: "1.2em",
             fontWeight: "bold",
             textAlign: "center",
             display: "block",
@@ -94,7 +93,6 @@ export default function Form() {
         type: "radio",
         label: "+18ans",
         name: "age",
-        value: "",
         option: {
           idRadio: "has_18",
           class: "box_radio"
@@ -106,7 +104,7 @@ export default function Form() {
         name: "",
         option: {
           labelStyle: {
-            fontSize: "1.5em",
+            fontSize: "1.2em",
             fontWeight: "bold",
             textAlign: "center",
             display: "block",
@@ -121,7 +119,7 @@ export default function Form() {
         type: "password",
         label: "Password",
         name: "password",
-        value: "",
+        value: "password",
         option: {
           class: "box_input",
           required: true,
@@ -132,7 +130,6 @@ export default function Form() {
         type: "button",
         name: "",
         label: "",
-        value: "",
         option: {
           inputStyle: {
             display: "none"
@@ -149,7 +146,7 @@ export default function Form() {
     <div>
       <section>
         <form>
-          <div></div>
+          <h1>FORM REACT</h1>
           <ul>
             {datas.map((data, key) => (
               <Input
