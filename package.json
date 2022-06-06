@@ -11,6 +11,7 @@
     "@mui/material": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "final-form": "4.20.7",
     "react": "latest",
     "react-dom": "16.13.1",
     "react-scripts": "2.1.8",

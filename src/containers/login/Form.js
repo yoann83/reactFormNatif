@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Input from "../../components/InputComponent";
-import Select from "../../components/SelectComponent";
 import Consent from "./Consent";
 import "../../styles.scss";
 
