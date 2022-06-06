@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Input from "../../components/Input";
+import Input from "../../components/InputComponent";
+import Select from "../../components/SelectComponent";
 import Consent from "./Consent";
 import "../../styles.scss";
 
@@ -33,12 +34,12 @@ export default function Form() {
         type: "text",
         label: "Last Name",
         name: "last_name",
+        value: "",
         dataPlaceholder: "BOND",
-        value: "Nom",
         option: {
           class: "box_input",
           required: true,
-          minLength: "2",
+          minLength: "3",
           maxLength: "15"
         }
       },
@@ -46,8 +47,8 @@ export default function Form() {
         type: "text",
         label: "First Name",
         name: "first_name",
+        value: "",
         dataPlaceholder: "James",
-        value: "Prénom",
         option: {
           class: "box_input"
         }
@@ -56,12 +57,11 @@ export default function Form() {
         type: "email",
         label: "Email",
         name: "email",
+        value: "",
         dataPlaceholder: "bond.james@mail.com",
-        value: "Nom",
         option: {
           class: "box_input",
-          required: true,
-          minLength: "2"
+          required: true
         }
       },
       {
@@ -85,7 +85,6 @@ export default function Form() {
         type: "radio",
         label: "-18ans",
         name: "age",
-        value: "16",
         option: {
           checkedRadio: "checked",
           idRadio: "not_has_18",
@@ -96,7 +95,7 @@ export default function Form() {
         type: "radio",
         label: "+18ans",
         name: "age",
-        value: "19",
+        value: "",
         option: {
           idRadio: "has_18",
           class: "box_radio"
@@ -123,6 +122,7 @@ export default function Form() {
         type: "password",
         label: "Password",
         name: "password",
+        value: "",
         option: {
           class: "box_input",
           required: true,
@@ -131,11 +131,13 @@ export default function Form() {
       },
       {
         type: "button",
-        name: "submit",
-        label: "submit",
-        value: "Add to favorites",
+        name: "",
+        label: "",
+        value: "",
         option: {
-          class: "box_submit"
+          inputStyle: {
+            display: "none"
+          }
         }
       }
     ]);
@@ -148,6 +150,7 @@ export default function Form() {
     <div>
       <section>
         <form>
+          <div></div>
           <ul>
             {datas.map((data, key) => (
               <Input

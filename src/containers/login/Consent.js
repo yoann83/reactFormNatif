@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToggleSwitch from "../../components/ToggleSwitch";
+import ToggleSwitch from "../../components/ToggleSwitchComponent";
 
 export default function Toggle() {
   //STATES
@@ -25,7 +25,7 @@ export default function Toggle() {
     <div id="consent">
       <div>
         <ToggleSwitch id="select" checked={select} onChange={handleChange} />
-        <label htmlFor="select"> Accept cookies</label>
+        <label htmlFor="select">Accept cookies</label>
       </div>
       <div>
         <ToggleSwitch
@@ -35,7 +35,7 @@ export default function Toggle() {
           checked={performance}
           onChange={setPerformance}
         />
-        <label htmlFor="performance"> Performance</label>
+        <label htmlFor="performance">Performance</label>
       </div>
       <div>
         <ToggleSwitch
@@ -45,7 +45,7 @@ export default function Toggle() {
           checked={contenu}
           onChange={setContenu}
         />
-        <label htmlFor="contenu"> Contenu</label>
+        <label htmlFor="contenu">Contenu</label>
       </div>
     </div>
   );

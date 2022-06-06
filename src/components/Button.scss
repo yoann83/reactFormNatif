@@ -4,7 +4,7 @@ $orange_egerie: #e94e1b;
   display: flex;
   align-items:center;
   justify-content: center;
-  label{
+  button{
     cursor: pointer;
     background-color: $blue_egerie;
     padding: 1.5em;
@@ -14,14 +14,5 @@ $orange_egerie: #e94e1b;
     &:hover{
       background-color: $orange_egerie;
     }
-    &:active{
-      transform: scale(0.9);
-    }
   }
-  input{
-    display: none;
-  }
-}
-.styleHidden{
-  display: none;
 }

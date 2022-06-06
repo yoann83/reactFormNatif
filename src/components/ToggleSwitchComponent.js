@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./ToggleSwitch.scss";
 
-const ToggleSwitch = ({
+const ToggleSwitchComponent = ({
   id,
   name,
   checked,
@@ -64,11 +64,11 @@ const ToggleSwitch = ({
 };
 
 // Set optionLabels for rendering.
-ToggleSwitch.defaultProps = {
+ToggleSwitchComponent.defaultProps = {
   optionLabels: ["Yes", "No"]
 };
 
-ToggleSwitch.propTypes = {
+ToggleSwitchComponent.propTypes = {
   id: PropTypes.string.isRequired,
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
@@ -78,4 +78,4 @@ ToggleSwitch.propTypes = {
   disabled: PropTypes.bool
 };
 
-export default ToggleSwitch;
+export default ToggleSwitchComponent;
