@@ -5,18 +5,13 @@ $success_egerie: #198754;
 $error_egerie: #FFBABB;
 #container{
   section{
-    margin: 2.5em 3.5em;
+    margin: 1em;
     padding: 1em 2em;
     border-radius: 0.3em;
     box-shadow: 0px 0px 5px $blue_egerie;
     font-family: sans-serif;
     text-align: center;
     padding: 1em 5vw;
-    transition: 0.4s ease-in-out;
-    &:hover{
-      background-color: white;
-      transform: scale(1.05);
-    }
     form{
       ul{
         padding: 0;
@@ -31,6 +26,18 @@ $error_egerie: #FFBABB;
       color: green;
       &:disabled{
         color: red;
+      }
+    }
+  }
+  #form-react-natif{
+    h1{
+      color: $orange_egerie;
+    }
+    .box-logo{
+      padding: 2em 10em;
+      img{
+        position: relative;
+        width: 100%;
       }
     }
   }

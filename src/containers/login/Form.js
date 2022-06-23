@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Input from "../../components/InputComponent";
+import { Image } from "react-native";
 import Consent from "./Consent";
 import "../../styles.scss";
 
@@ -8,6 +9,7 @@ export default function Form() {
   const [datas, setDatas] = useState([]);
 
   //ATTRIBUTES
+  const title = "form react natif";
 
   //INITIALIZE FUNCTION
   useEffect(() => {
@@ -143,10 +145,17 @@ export default function Form() {
 
   //RENDER COMPONENT IN ID "list_books"
   return (
-    <div>
+    <div id="form-react-natif">
+      <div className="box-logo">
+        <Image
+          source={
+            "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+          }
+        />
+      </div>
       <section>
         <form>
-          <h1>FORM REACT</h1>
+          <h1>{title.toUpperCase()}</h1>
           <ul>
             {datas.map((data, key) => (
               <Input

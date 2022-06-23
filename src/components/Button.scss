@@ -5,14 +5,10 @@ $orange_egerie: #e94e1b;
   align-items:center;
   justify-content: center;
   button{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: max-content;
     cursor: pointer;
     background-color: $blue_egerie;
-    padding: 1.5em;
+    padding: 1.5em 3em;
     margin-top: 1em;
     border-radius: 0.6em;
     transition: all ease-in-out 0.1s;
